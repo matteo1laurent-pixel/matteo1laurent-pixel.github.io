@@ -96,8 +96,8 @@ const PROJECTS = [
         tools: 'WordPress, SEO, UX writing, AI workflow design',
         resultValue: '',
         resultLabel: '',
-        link: '',
-        linkLabel: '',
+        link: 'projects/easy-walks.html',
+        linkLabel: 'Read the project',
     },
     {
         title: 'Smart Expiry',
