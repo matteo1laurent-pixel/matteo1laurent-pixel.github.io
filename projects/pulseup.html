@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PulseUp customer analytics | Matteo Laurent</title>
+        <meta name="description" content="Marketing analytics project in R for a freemium fitness app: factor analysis, customer segmentation, regression, difference-in-differences, and conversion prediction on 3,000 users." />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+
+    <body data-root="../">
+        <a class="skip-link" href="#content">Skip to content</a>
+
+        <header class="site-header">
+            <a class="wordmark" href="../index.html">Matteo Laurent</a>
+            <nav aria-label="Main">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+                <button id="themeButton" class="theme-button" type="button">Dark mode</button>
+            </nav>
+        </header>
+
+        <main id="content" class="case">
+            <div class="case-inner">
+                <a class="back-link" href="../index.html#projects">Back to all projects</a>
+                <h1>PulseUp customer analytics</h1>
+                <p class="case-lead">Marketing Analytics project, 2026. In a team of five, we analysed 3,000 users of PulseUp, a freemium fitness app, to understand what drives conversion to premium, measure the impact of an onboarding campaign, and turn the results into marketing recommendations.</p>
+                <dl class="case-facts">
+<div><dt>Type</dt><dd>Marketing analytics project</dd></div>
+<div><dt>Data</dt><dd>3,000 users: app engagement, CRM activity, demographics, spending, and a 15-item perception survey</dd></div>
+<div><dt>Tools</dt><dd>R (tidyverse, psych, factoextra, caret, pROC), factor analysis, clustering, regression, difference-in-differences</dd></div>
+                </dl>
+                <article class="case-body">
+<h2>The question</h2>
+<p>PulseUp faced three problems: few free users upgraded to premium, engagement was uneven, and nobody knew whether recent marketing actions were working. Management wanted to know which users to target, what makes them convert, what drives spending once they pay, and whether the new onboarding campaign actually moved the needle.</p>
+
+<h2>What I did</h2>
+<p>We worked through five analyses, each building on the previous one.</p>
+<ul>
+<li><strong>Factor analysis.</strong> We reduced the 15 survey items to three clear drivers of the user experience: trust, perceived value, and usability. The data was well suited (KMO of 0.84), the model fit was excellent (RMSEA of 0.005), and each factor was reliable (Cronbach's alpha of 0.80 to 0.81).</li>
+<li><strong>Customer segmentation.</strong> We combined these three scores with behavioural data, standardised everything, used hierarchical clustering and an elbow plot to choose four segments, then assigned users with K-means.</li>
+<li><strong>Linear regression.</strong> We tested whether perceptions and engagement explain how much paying subscribers spend each month, and checked the model with VIF, Breusch-Pagan tests, and robust standard errors.</li>
+<li><strong>Quasi-experiment.</strong> Because the onboarding campaign was not randomly assigned, a simple before-and-after or treated-versus-control comparison would have been biased. We used a difference-in-differences model to isolate its causal effect.</li>
+<li><strong>Logistic regression.</strong> We built a conversion model to score each free user's probability of upgrading.</li>
+</ul>
+
+<h2>Key findings</h2>
+<ul>
+<li><strong>The onboarding campaign works.</strong> It raised conversion by about 9.5 percentage points (p &lt; 0.01). Treated users went from 34.1% to 42.9% conversion while the control group stayed flat, and the effect held after adding controls.</li>
+<li><strong>Engagement is the strongest signal.</strong> Each extra session in a month raised the odds of converting by about 3.5%, and each extra minute of average session length by about 2.6%. Demographics, email opens, value, and usability had no significant effect.</li>
+<li><strong>Four distinct user profiles.</strong> Committed Converters (13%), Trusting but Light Users (31%), Power Users with Friction (34%), who use the app the most and spend the most but trust it the least, and High-Value Considerers (23%), who like the product but hesitate at the upgrade step.</li>
+<li><strong>What drives conversion does not drive spending.</strong> Among paying users, perceptions and engagement explained almost none of the variation in monthly spend (R² of about 0.004), even though the model passed every diagnostic check.</li>
+<li><strong>The data is missing key drivers.</strong> The conversion model had low explanatory power and flagged very few converters at the default threshold, which shows that important behavioural signals are not yet collected.</li>
+</ul>
+
+<h2>Recommendations</h2>
+<ul>
+<li><strong>Scale the onboarding campaign</strong>, while keeping in mind that the estimate relies on the parallel trends assumption.</li>
+<li><strong>Personalise the message by segment.</strong> Build trust with Power Users with Friction through data privacy messaging and social proof, and remove the last barrier for High-Value Considerers with limited-time offers and one-click upgrades. Together these two segments represent over 1,600 users.</li>
+<li><strong>Use the conversion model as a ranking tool</strong>, not a yes-or-no classifier, to prioritise the free users most likely to upgrade.</li>
+<li><strong>Work on monetisation design</strong>, such as pricing tiers, bundles, and upgrade paths, since better perceptions alone will not raise revenue per user.</li>
+<li><strong>Collect richer behavioural data</strong>, such as workout completion, feature usage, notification clicks, and payment friction.</li>
+</ul>
+                </article>
+<section class="case-extras">
+<h2>Documents</h2>
+<figure class="document">
+<object data="../assets/projects/pulseup-report.pdf" type="application/pdf" aria-label="Final report with R code"></object>
+<figcaption>Final report with R code <a href="../assets/projects/pulseup-report.pdf" target="_blank" rel="noopener noreferrer">Open the PDF</a></figcaption>
+</figure>
+</section>
+            </div>
+        </main>
+
+        <footer class="contact case-footer">
+            <div class="section-inner">
+                <div class="contact-links">
+                    <a href="../index.html#projects">All projects</a>
+                    <a href="#" data-email>Email</a>
+                    <a href="#" data-profile="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" data-profile="cv" target="_blank" rel="noopener noreferrer">View my CV</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/projects.js"></script>
+        <script src="../js/site.js"></script>
+    </body>
+</html>

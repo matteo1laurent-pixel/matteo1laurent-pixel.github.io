@@ -60,8 +60,8 @@ const PROJECTS = [
         tools: 'R, segmentation, predictive modeling',
         resultValue: '3,000',
         resultLabel: 'customer records analyzed',
-        link: '',
-        linkLabel: '',
+        link: 'projects/pulseup.html',
+        linkLabel: 'Read the project',
     },
     {
         title: 'Divvy bike-share analysis',
