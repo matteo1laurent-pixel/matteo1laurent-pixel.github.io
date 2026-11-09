@@ -15,7 +15,19 @@ const PROFILE = {
 };
 
 const PROJECTS = [
-    {
+      {
+        title: 'Interactive CV in Tableau',
+        category: 'data',
+        context: 'Personal project, 2026',
+        description:
+            'I turned my CV into an interactive Tableau dashboard, so recruiters can explore my education, experience, and skills instead of reading a static page.',
+        tools: 'Tableau Desktop, Tableau Public, data visualization',
+        resultValue: '',
+        resultLabel: '',
+        link: 'https://public.tableau.com/app/profile/matteo.laurent/viz/Matteo_Interactive_CV/CV',
+        linkLabel: 'Open in Tableau Public',
+    },  
+  {
         title: 'AI in tax and audit for Forvis Mazars',
         category: 'strategy',
         context: 'In-company consulting project, January to June 2026',
