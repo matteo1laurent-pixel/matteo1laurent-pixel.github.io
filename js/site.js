@@ -20,8 +20,10 @@
         const result = project.resultValue
             ? `<p class="result"><strong>${escapeHtml(project.resultValue)}</strong><span>${escapeHtml(project.resultLabel)}</span></p>`
             : '';
+        const external = /^https?:/.test(project.link || '');
+        const target = external ? ' target="_blank" rel="noopener noreferrer"' : '';
         const link = project.link
-            ? `<a class="project-link" href="${escapeHtml(project.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.linkLabel || 'View project')}</a>`
+            ? `<a class="project-link" href="${escapeHtml(project.link)}"${target}>${escapeHtml(project.linkLabel || 'View project')}</a>`
             : '';
 
         return `
@@ -89,6 +91,9 @@
     }
 
     function setUpContactLinks() {
+        // Project pages live one folder down, so local files need "../" in front.
+        const root = document.body.dataset.root || '';
+
         document.querySelectorAll('[data-email]').forEach((link) => {
             link.href = `mailto:${PROFILE.email}`;
         });
@@ -96,7 +101,7 @@
         ['github', 'linkedin', 'cv'].forEach((key) => {
             document.querySelectorAll(`[data-profile="${key}"]`).forEach((link) => {
                 if (PROFILE[key]) {
-                    link.href = PROFILE[key];
+                    link.href = /^https?:/.test(PROFILE[key]) ? PROFILE[key] : root + PROFILE[key];
                 } else {
                     link.hidden = true;
                 }
@@ -132,8 +137,9 @@
         });
     }
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
     setUpTheme();
     setUpContactLinks();
-    setUpProjects();
+    if (list) setUpProjects();
 })();

@@ -710,3 +710,135 @@ a {
         opacity: 1;
     }
 }
+
+/* Project pages */
+
+.case {
+    padding: 56px 0 96px;
+}
+
+.case-inner {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: var(--accent);
+    font-weight: 600;
+    text-underline-offset: 4px;
+}
+
+.case h1 {
+    font-size: clamp(3.2rem, 8vw, 5.6rem);
+}
+
+.case-lead {
+    margin-top: 18px;
+    font-size: 1.25rem;
+    line-height: 1.45;
+}
+
+.case-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 32px;
+    margin-top: 36px;
+    padding: 24px 0;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+}
+
+.case-facts dt {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.case-facts dd {
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.case-body h2,
+.case-extras h2 {
+    margin: 48px 0 14px;
+    font-family: var(--display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.case-body p + p {
+    margin-top: 14px;
+}
+
+.case-body ul,
+.case-body ol {
+    margin: 14px 0 0;
+    padding-left: 1.25em;
+}
+
+.case-body li + li {
+    margin-top: 10px;
+}
+
+.case-body strong {
+    font-weight: 600;
+}
+
+.document {
+    margin: 0 0 32px;
+}
+
+.document object {
+    display: block;
+    width: 100%;
+    height: 70vh;
+    min-height: 420px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+}
+
+.document figcaption {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.document figcaption a {
+    margin-left: 8px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.case-footer {
+    padding: 48px 0;
+}
+
+.case-footer .contact-links {
+    margin-top: 0;
+}
+
+@media (max-width: 680px) {
+    .case {
+        padding: 36px 0 64px;
+    }
+
+    .case-inner {
+        padding: 0 16px;
+    }
+
+    .case-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .document object {
+        display: none;
+    }
+
+    .document figcaption a {
+        display: inline-block;
+        margin: 8px 0 0;
+    }
+}

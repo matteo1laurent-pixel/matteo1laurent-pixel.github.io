@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Divvy bike-share analysis | Matteo Laurent</title>
+        <meta name="description" content="SQL and Power BI analysis of a Chicago bike-share database, focused on subscriber growth, usage, and revenue." />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+
+    <body data-root="../">
+        <a class="skip-link" href="#content">Skip to content</a>
+
+        <header class="site-header">
+            <a class="wordmark" href="../index.html">Matteo Laurent</a>
+            <nav aria-label="Main">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+                <button id="themeButton" class="theme-button" type="button">Dark mode</button>
+            </nav>
+        </header>
+
+        <main id="content" class="case">
+            <div class="case-inner">
+                <a class="back-link" href="../index.html#projects">Back to all projects</a>
+                <h1>Divvy bike-share analysis</h1>
+                <p class="case-lead">SQL and Power BI analysis of a Chicago bike-share database, focused on subscriber growth, usage, and revenue.</p>
+                <dl class="case-facts">
+<div><dt>Type</dt><dd>SQL and dashboard project</dd></div>
+<div><dt>Data</dt><dd>Divvy database: trips, users, and stations</dd></div>
+<div><dt>Tools</dt><dd>SQL, Power BI</dd></div>
+                </dl>
+                <article class="case-body">
+<h2>The question</h2>
+<p>How are subscribers growing, how intensively do they use the service, and what revenue does that represent? I answered these questions with SQL, then turned the results into Power BI dashboards.</p>
+
+<h2>What I did</h2>
+<p>I extracted and transformed the data with SQL, using aggregations, date functions, joins, and set operations. I then built Power BI dashboards showing monthly acquisition, growth rates, and the most active users.</p>
+
+<h2>Key findings</h2>
+<ul>
+<li><strong>Revenue estimate.</strong> Assuming a subscription of $30 per user per year, I estimated revenue from active users, meaning users with at least one trip. There were 500 active subscribers in both 2024 and 2025, or about $15,000 a year.</li>
+<li><strong>Usage grew while the base stayed flat.</strong> Trips rose from 69,990 in 2024 to 130,010 in 2025, so each subscriber used the service much more.</li>
+<li><strong>Acquisition peaks.</strong> I measured new registrations per month. January and February 2024 were the strongest months, with 28 new users each.</li>
+<li><strong>Data quality.</strong> I found a group of users with no registration month, caused by missing registration dates.</li>
+<li><strong>Growth dynamics.</strong> I calculated month-over-month changes in new users, in absolute terms and as a growth rate, and highlighted the strongest periods in Power BI.</li>
+<li><strong>Power users.</strong> I ranked the 10 most active users by total distance traveled to identify who drives the highest usage.</li>
+</ul>
+                </article>
+<section class="case-extras">
+<h2>Documents</h2>
+<figure class="document">
+<object data="../assets/projects/divvy-sql-part-1.pdf" type="application/pdf" aria-label="SQL analysis, part 1"></object>
+<figcaption>SQL analysis, part 1 <a href="../assets/projects/divvy-sql-part-1.pdf" target="_blank" rel="noopener noreferrer">Open the PDF</a></figcaption>
+</figure>
+<figure class="document">
+<object data="../assets/projects/divvy-sql-part-2.pdf" type="application/pdf" aria-label="SQL analysis, part 2"></object>
+<figcaption>SQL analysis, part 2 <a href="../assets/projects/divvy-sql-part-2.pdf" target="_blank" rel="noopener noreferrer">Open the PDF</a></figcaption>
+</figure>
+</section>
+            </div>
+        </main>
+
+        <footer class="contact case-footer">
+            <div class="section-inner">
+                <div class="contact-links">
+                    <a href="../index.html#projects">All projects</a>
+                    <a href="#" data-email>Email</a>
+                    <a href="#" data-profile="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" data-profile="cv" target="_blank" rel="noopener noreferrer">View my CV</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/projects.js"></script>
+        <script src="../js/site.js"></script>
+    </body>
+</html>

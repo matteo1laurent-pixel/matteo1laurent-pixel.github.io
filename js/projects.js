@@ -15,7 +15,7 @@ const PROFILE = {
 };
 
 const PROJECTS = [
-      {
+    {
         title: 'Interactive CV in Tableau',
         category: 'data',
         context: 'Personal project, 2026',
@@ -26,8 +26,8 @@ const PROJECTS = [
         resultLabel: '',
         link: 'https://public.tableau.com/app/profile/matteo.laurent/viz/Matteo_Interactive_CV/CV',
         linkLabel: 'Open in Tableau Public',
-    },  
-  {
+    },
+    {
         title: 'AI in tax and audit for Forvis Mazars',
         category: 'strategy',
         context: 'In-company consulting project, January to June 2026',
@@ -72,8 +72,8 @@ const PROJECTS = [
         tools: 'SQL, Power BI, KPI and trend analysis',
         resultValue: '',
         resultLabel: '',
-        link: 'https://harsh-earthworm-77d.notion.site/Project-Summary-2fc2117dfc918166ba46e19b8308ad34',
-        linkLabel: 'Read the summary',
+        link: 'projects/divvy.html',
+        linkLabel: 'Read the project',
     },
     {
         title: 'Airbnb New York host dashboard',
@@ -108,8 +108,8 @@ const PROJECTS = [
         tools: 'Product design, Expo, React Native, TypeScript',
         resultValue: '',
         resultLabel: '',
-        link: 'https://harsh-earthworm-77d.notion.site/Project-Summary-2fc2117dfc9181b0bf5aefbe952010e2',
-        linkLabel: 'Read the summary',
+        link: 'projects/smart-expiry.html',
+        linkLabel: 'Read the project',
     },
     {
         title: 'AI Fashion Lab',
@@ -120,8 +120,8 @@ const PROJECTS = [
         tools: 'WBS, critical path, Gantt chart, cost baseline',
         resultValue: '',
         resultLabel: '',
-        link: 'https://harsh-earthworm-77d.notion.site/Project-Summary-1-2fc2117dfc91813b87d9cb9fb1179cae',
-        linkLabel: 'Read the summary',
+        link: 'projects/ai-fashion-lab.html',
+        linkLabel: 'Read the project',
     },
     {
         title: 'Nike and adidas in tennis',
@@ -132,7 +132,7 @@ const PROJECTS = [
         tools: 'Social media analytics, sports marketing',
         resultValue: '',
         resultLabel: '',
-        link: 'https://harsh-earthworm-77d.notion.site/Thesis-summary-2fc2117dfc9181db9117f0b2937af991',
-        linkLabel: 'Read the summary',
+        link: 'projects/nike-adidas-thesis.html',
+        linkLabel: 'Read the project',
     },
 ];
