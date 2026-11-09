@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>AI in tax and audit for Forvis Mazars | Matteo Laurent</title>
+        <meta name="description" content="In-company consulting project with Forvis Mazars: interviews with tax and audit leaders across four countries, and a secure, EU-hosted AI agent recommendation with three pilot scenarios and a 12-week roadmap." />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+
+    <body data-root="../">
+        <a class="skip-link" href="#content">Skip to content</a>
+
+        <header class="site-header">
+            <a class="wordmark" href="../index.html">Matteo Laurent</a>
+            <nav aria-label="Main">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+                <button id="themeButton" class="theme-button" type="button">Dark mode</button>
+            </nav>
+        </header>
+
+        <main id="content" class="case">
+            <div class="case-inner">
+                <a class="back-link" href="../index.html#projects">Back to all projects</a>
+                <h1>AI in tax and audit for Forvis Mazars</h1>
+                <p class="case-lead">In-company consulting project, January to June 2026. I led a five-person emlyon team that studied how Forvis Mazars could use AI in tax and audit, and recommended a secure, EU-hosted AI agent with three pilot scenarios and a 12-week roadmap.</p>
+                <dl class="case-facts">
+<div><dt>Type</dt><dd>Strategy and AI consulting project, team lead</dd></div>
+<div><dt>Research</dt><dd>Interviews with tax and audit partners and innovation leads in France, Germany, the Netherlands, and the UK</dd></div>
+<div><dt>Tools</dt><dd>Stakeholder interviews, workflow mapping, WBS and Gantt, prioritization matrix, NotebookLM, OpenClaw</dd></div>
+                </dl>
+                <article class="case-body">
+<h2>The question</h2>
+<p>Where can AI genuinely save time in tax and audit work, and how can a firm adopt it without breaking the rules that define the profession: client confidentiality, data sovereignty, and a traceable chain of proof behind every conclusion? Forvis Mazars wanted concrete, realistic use cases rather than a list of trendy tools.</p>
+
+<h2>What I did</h2>
+<p>I set up an eight-week roadmap and ran the team against it, with a weekly check-in with our supervisor at the firm. We started by locking the scope and writing a one-page project charter, a work breakdown structure, and a Gantt chart.</p>
+<p>We then mapped the current workflows in tax and audit and interviewed practitioners to find the pain points. We spoke with tax partners from the Netherlands and the UK, a partner in France who has led eight years of AI research and development in audit, and the innovation lead for audit at Forvis Mazars Germany. I turned each interview into a structured debrief deck so the whole team could build on the same insights.</p>
+<p>From there we defined the constraints and red lines for AI in a regulated firm, built a library of use cases, scored them on value, feasibility, compliance risk, and adoption difficulty, and turned the strongest ones into pilot-ready scenarios with an implementation roadmap.</p>
+
+<h2>Key findings</h2>
+<ul>
+<li><strong>The facts are the bottleneck, not the law.</strong> Tax partners told us the hard part of advisory work is collecting complete, correct client data. If the facts are wrong, the advice is wrong, and the firm carries the liability.</li>
+<li><strong>Accuracy has a threshold.</strong> At around 75% accuracy, auditors double-check everything and the tool costs time. Only near 95% do they trust it enough to spot-check, which is where productivity appears.</li>
+<li><strong>Early machine learning failed on noise.</strong> An unsupervised anomaly detection project flagged about 50,000 potential anomalies in a single dataset. Nobody could review them, and trust in the tool collapsed.</li>
+<li><strong>What works today is verifiable AI.</strong> The firm runs an on-premise generative AI platform in France and uses retrieval-augmented generation, so every answer is shown next to its source page. AI drafts or translates, and a human checks the logic before anything is used.</li>
+<li><strong>Data cannot leave the legal entity.</strong> Audit signatures are tied to national entities, so client data cannot be pooled across countries to train one global model. Rules also differ by country, stricter in the Netherlands and the UK than in Germany and France.</li>
+<li><strong>The human stays accountable.</strong> Every interviewee agreed that AI should handle volume while the auditor or tax advisor validates exceptions and signs the opinion.</li>
+</ul>
+
+<h2>What we recommended</h2>
+<p>We recommended deploying OpenClaw, an open-source AI agent that works through the tools teams already use, such as Slack or Teams, on a dedicated VPS hosted in France or Germany. Sensitive workflows run on an on-premise model, and a private Claude API endpoint handles advisory tasks that need stronger reasoning, all behind a VPN with MFA, role-based access, and a full audit log.</p>
+<ul>
+<li><strong>Scenario A, tax memo verification.</strong> The agent drafts an advisory memo, extracts every legal claim, checks it against official sources such as BOFiP and Legifrance, and color-codes it for review. A 2 to 3 hour drafting and checking job becomes about 20 minutes of targeted review, a projected 80% cut in verification time.</li>
+<li><strong>Scenario B, audit work papers.</strong> From a raw SAP export of 75,000 entries, the agent flags post-closing entries above 50,000 EUR, cross-checks them against the trial balance, and drafts the work paper. Junior time drops from 6 to 8 hours to about 30 minutes, and senior review from 2 hours to 20 minutes.</li>
+<li><strong>Scenario C, proactive regulatory monitoring.</strong> Every morning the agent scans regulatory updates, identifies which clients are affected, and alerts the right manager on Slack, so clients hear about changes before they read them in the press.</li>
+<li><strong>A 12-week rollout.</strong> Weeks 1 to 4 set up the secure infrastructure and pilot Scenario A with the tax compliance team. Weeks 5 to 8 add Scenario B with one audit team and connect internal platforms. Weeks 9 to 12 extend Scenario C to the full tax portfolio and scale the infrastructure across practice lines.</li>
+</ul>
+<p>The goal we presented was AI that is trustworthy by design: every AI-assisted deliverable verified, traceable, and defensible, so that professionals can spend their time on judgment and client relationships.</p>
+                </article>
+<section class="case-extras">
+<h2>Documents</h2>
+<figure class="document">
+<object data="../assets/projects/forvis-mazars-final-presentation.pdf" type="application/pdf" aria-label="Final presentation to Forvis Mazars"></object>
+<figcaption>Final presentation to Forvis Mazars <a href="../assets/projects/forvis-mazars-final-presentation.pdf" target="_blank" rel="noopener noreferrer">Open the PDF</a></figcaption>
+</figure>
+</section>
+            </div>
+        </main>
+
+        <footer class="contact case-footer">
+            <div class="section-inner">
+                <div class="contact-links">
+                    <a href="../index.html#projects">All projects</a>
+                    <a href="#" data-email>Email</a>
+                    <a href="#" data-profile="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" data-profile="cv" target="_blank" rel="noopener noreferrer">View my CV</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/projects.js"></script>
+        <script src="../js/site.js"></script>
+    </body>
+</html>

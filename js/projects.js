@@ -32,12 +32,12 @@ const PROJECTS = [
         category: 'strategy',
         context: 'In-company consulting project, January to June 2026',
         description:
-            'I led a five-person team exploring how the firm could use AI more effectively. We interviewed senior partners, including the global R&D lead, and recommended n8n, a workflow automation platform hosted on EU-controlled infrastructure, with three pilot use cases and a 12-week roadmap.',
-        tools: 'n8n, stakeholder interviews, workflow automation',
+            'I led a five-person team exploring how the firm could use AI more effectively. We interviewed tax and audit leaders in four countries and recommended OpenClaw, an AI agent hosted on a secure EU server, with three pilot scenarios and a 12-week roadmap.',
+        tools: 'OpenClaw, stakeholder interviews, workflow mapping',
         resultValue: '~80%',
         resultLabel: 'projected cut in document verification time',
-        link: '',
-        linkLabel: '',
+        link: 'projects/forvis-mazars.html',
+        linkLabel: 'Read the project',
     },
     {
         title: 'Demand forecasting for fresh produce',
