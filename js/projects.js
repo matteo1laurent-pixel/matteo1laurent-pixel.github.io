@@ -48,8 +48,8 @@ const PROJECTS = [
         tools: 'Python, Random Forest, inventory simulation',
         resultValue: '7–52%',
         resultLabel: 'lower forecast error than the baseline, by product',
-        link: '',
-        linkLabel: '',
+        link: 'projects/demand-forecasting.html',
+        linkLabel: 'Read the project',
     },
     {
         title: 'PulseUp customer analytics',

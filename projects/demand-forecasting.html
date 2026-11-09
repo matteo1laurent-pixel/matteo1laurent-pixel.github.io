@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Demand forecasting for fresh produce | Matteo Laurent</title>
+        <meta name="description" content="Python project forecasting daily demand for 10 fresh produce items with a Random Forest, then setting reorder points and safety stock at 90% and 95% service levels." />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+
+    <body data-root="../">
+        <a class="skip-link" href="#content">Skip to content</a>
+
+        <header class="site-header">
+            <a class="wordmark" href="../index.html">Matteo Laurent</a>
+            <nav aria-label="Main">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+                <button id="themeButton" class="theme-button" type="button">Dark mode</button>
+            </nav>
+        </header>
+
+        <main id="content" class="case">
+            <div class="case-inner">
+                <a class="back-link" href="../index.html#projects">Back to all projects</a>
+                <h1>Demand forecasting for fresh produce</h1>
+                <p class="case-lead">Operations &amp; Decisions group project, 2026. In a team of six, we forecast daily demand for a retailer's 10 best-selling fresh products, then turned the forecasts into reorder points and safety stock at 90% and 95% service levels.</p>
+                <dl class="case-facts">
+<div><dt>Type</dt><dd>Forecasting and inventory optimisation project</dd></div>
+<div><dt>Data</dt><dd>72,409 store sales records over 729 days: units sold, retail price, and discount flag</dd></div>
+<div><dt>Tools</dt><dd>Python (pandas, scikit-learn, seaborn), Random Forest, inventory simulation</dd></div>
+                </dl>
+                <article class="case-body">
+<h2>The question</h2>
+<p>Fresh produce is a balancing act: order too little and shelves go empty, order too much and stock spoils. How accurately can we predict tomorrow's demand for each product, and how much safety stock does the store really need to hold?</p>
+
+<h2>What I did</h2>
+<p>We started by cleaning and restructuring the data. The raw file recorded several package variants of the same product on the same day, so simply deduplicating rows would have undercounted demand. Instead, we summed units sold across variants, averaged their prices, and rebuilt a continuous daily calendar for each of the 10 best-selling products, filling gaps with zero sales and the last known price.</p>
+<p>We then compared two forecasting models on a strict time-based split, training on the first 80% of the timeline and testing on the last 20% to avoid data leakage. The baseline assumed tomorrow equals today. The Random Forest used yesterday's demand, demand a week earlier, a 7-day rolling average, the day of the week, the month, and the retail price.</p>
+<p>Finally, we studied how price affects demand and simulated a reorder-point policy with a 2-day supplier lead time, comparing the safety stock needed for 90% and 95% service levels.</p>
+
+<h2>Key findings</h2>
+<ul>
+<li><strong>The Random Forest won on every product.</strong> Forecast error (MAE) fell by 7% to 52.6% compared with the baseline. The biggest gains came from Mixed Peppers (52.6%) and Iceberg Lettuce (40.4%), whose weekly shopping cycles are easy to learn.</li>
+<li><strong>Some products stay hard to predict.</strong> Loose Red Pepper improved by only 7% and kept the highest error, at around 750 units a day, a sign of very volatile demand that neither model fully captures.</li>
+<li><strong>Weekly patterns matter.</strong> Adding demand from a week earlier and the day of the week let the model pick up the weekly shopping rhythm that the baseline misses, along with non-linear effects such as price.</li>
+<li><strong>Higher prices mean lower demand, mostly.</strong> None of the top products were ever discounted, so we looked at price instead. For cucumbers, average daily demand fell from 1,474 units in the cheapest price quartile to 961 in the third. The most expensive quartile ticked back up to 1,008, likely because of seasonal effects.</li>
+<li><strong>The last few points of service level are expensive.</strong> Moving from 90% to 95% more than triples safety stock for Loose Red Pepper (from about 1,240 to 4,210 units) and nearly triples it for Aubergine (from about 1,350 to 3,590 units). For Iceberg Lettuce the increase is small, from about 400 to 540 units.</li>
+</ul>
+
+<h2>Recommendation</h2>
+<p>Use the Random Forest for day-to-day replenishment and retrain it every week. Cap high-variance items such as Loose Red Pepper and Aubergine at a 90% service level: accepting the occasional stockout is cheaper than the spoilage and tied-up cash of thousands of extra perishable units. For stable, fast-moving items such as Cucumber and Iceberg Lettuce, a 95% target is affordable.</p>
+<p>Next steps would be tuning the model's hyperparameters, separating price effects from seasonality with a regression, and modelling variable supplier lead times with a Monte Carlo simulation.</p>
+                </article>
+<section class="case-extras">
+<h2>Documents</h2>
+<figure class="document">
+<object data="../assets/projects/demand-forecasting-report.pdf" type="application/pdf" aria-label="Final report"></object>
+<figcaption>Final report <a href="../assets/projects/demand-forecasting-report.pdf" target="_blank" rel="noopener noreferrer">Open the PDF</a></figcaption>
+</figure>
+<figure class="document">
+<object data="../assets/projects/demand-forecasting-notebook.pdf" type="application/pdf" aria-label="Python notebook"></object>
+<figcaption>Python notebook <a href="../assets/projects/demand-forecasting-notebook.pdf" target="_blank" rel="noopener noreferrer">Open the PDF</a></figcaption>
+</figure>
+</section>
+            </div>
+        </main>
+
+        <footer class="contact case-footer">
+            <div class="section-inner">
+                <div class="contact-links">
+                    <a href="../index.html#projects">All projects</a>
+                    <a href="#" data-email>Email</a>
+                    <a href="#" data-profile="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" data-profile="cv" target="_blank" rel="noopener noreferrer">View my CV</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/projects.js"></script>
+        <script src="../js/site.js"></script>
+    </body>
+</html>
